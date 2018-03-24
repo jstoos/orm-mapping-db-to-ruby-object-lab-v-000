@@ -66,7 +66,10 @@ class Student
       WHERE grade = 9
     SQL
 
-    DB[:conn].execute(sql, name).count
+    DB[:conn].execute(sql, name).each do |row|
+      count +=1
+    end
+    count
 
   end
 
