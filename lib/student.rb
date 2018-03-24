@@ -66,11 +66,9 @@ class Student
       WHERE grade = 9
     SQL
 
-    DB[:conn].execute(sql, name).each do |row|
-      count +=1
+    DB[:conn].execute(sql, name).map do |row|
+      students << row[1]
     end
-    count
-
   end
 
 
