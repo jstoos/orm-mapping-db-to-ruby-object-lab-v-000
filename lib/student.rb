@@ -67,7 +67,7 @@ class Student
     SQL
 
     DB[:conn].execute(sql, name).count
-    end
+
   end
 
 
