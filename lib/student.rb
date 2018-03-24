@@ -69,6 +69,7 @@ class Student
     DB[:conn].execute(sql, name).map do |row|
       students << row[1]
     end
+    students
   end
 
 
