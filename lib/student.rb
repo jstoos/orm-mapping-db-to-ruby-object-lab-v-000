@@ -119,8 +119,8 @@ class Student
     SQL
 
     DB[:conn].execute(sql).map do |row|
-      row[1].first
-    end
+      row[1]
+    end.first
   end
 
 
