@@ -101,8 +101,10 @@ class Student
       LIMIT ?
     SQL
 
+    students = []
+
     DB[:conn].execute(sql, x).map do |row|
-      self.new_from_db(row)
+      students << row[1]
     end.first
   end
 
