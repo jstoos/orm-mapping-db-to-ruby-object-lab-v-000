@@ -74,5 +74,19 @@ class Student
     students
   end
 
+  def self.students_below_12th_grade
+    sql = <<-SQL
+      SELECT *
+      FROM students
+      WHERE grade != (?)
+    SQL
+
+    students = []
+
+    DB[:conn].execute(sql, 12).map do |row|
+      students << row[1]
+    end
+    students
+  end
 
 end
