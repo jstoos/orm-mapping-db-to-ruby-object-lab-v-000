@@ -11,7 +11,7 @@ class Student
     new_student
   end
 
-  def self.all_from_database
+  def self.all
     sql = <<-SQL
       SELECT *
       FROM students
