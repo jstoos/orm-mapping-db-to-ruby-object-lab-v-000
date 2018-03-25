@@ -21,6 +21,7 @@ class Student
       current_student = self.new_from_db(row)
       @@all_students << current_student
     end
+    @@all_students
   end
 
   def self.find_by_name(name)
