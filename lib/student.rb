@@ -66,6 +66,8 @@ class Student
       WHERE grade = ?
     SQL
 
+    students = []
+
     DB[:conn].execute(sql, 9).map do |row|
       students << row[1]
     end
