@@ -118,7 +118,7 @@ class Student
       LIMIT 1
     SQL
 
-    DB[:conn].execute(sql).map |row|
+    DB[:conn].execute(sql).map do |row|
       row.name
     end
   end
