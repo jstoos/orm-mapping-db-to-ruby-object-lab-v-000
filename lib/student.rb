@@ -123,5 +123,19 @@ class Student
      end.first
   end
 
+  def self.all_students_in_grade_x
+    sql = <<-SQL
+      SELECT *
+      FROM students
+      WHERE grade = ?
+    SQL
+
+    students = []
+
+    DB[:conn].execute(sql, x).map do |row|
+      students << row[1]
+    end
+    students
+  end
 
 end
