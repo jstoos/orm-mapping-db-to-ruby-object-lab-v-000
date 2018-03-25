@@ -117,9 +117,9 @@ class Student
       WHERE id = 1
     SQL
 
-    DB[:conn].execute(sql).map do |row|
-      row[1]
-    end.first
+    # DB[:conn].execute(sql).map do |row|
+    #   row[1]
+    # end.first
   end
 
 
